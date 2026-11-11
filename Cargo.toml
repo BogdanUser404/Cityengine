@@ -2,7 +2,7 @@
 name = "Cityesengine"
 version = "0.1.0"
 edition = "2024"
-license = "LGPL 3.0"
+license = "LGPL-3.0-or-later"
 description = "Simple city/factory build, game engine"
 repository = "https://github.com/BogdanUser404/Cityengine"
 readme = "README.md"
