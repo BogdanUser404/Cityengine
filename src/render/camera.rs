@@ -31,13 +31,11 @@ impl Camera2D {
 		self.zoom = self.zoom.clamp(Self::MIN_ZOOM, Self::MAX_ZOOM);
 	}
 
-	/// Сдвиг в пикселях экрана (например, от мыши) → в мировых тайлах.
 	pub fn pan_pixels(&mut self, dx: f32, dy: f32) {
 		self.x = (self.x + dx / self.zoom).max(0.0);
 		self.y = (self.y + dy / self.zoom).max(0.0);
 	}
 
-	/// (x0, y0, x1, y1) — эксклюзивные границы видимого прямоугольника клеток.
 	pub fn visible_rect(&self, screen_w: f32, screen_h: f32) -> (u32, u32, u32, u32) {
 		let w = (screen_w / self.zoom).ceil() as u32 + 1;
 		let h = (screen_h / self.zoom).ceil() as u32 + 1;
